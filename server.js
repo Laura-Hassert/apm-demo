@@ -11,6 +11,7 @@ const rollbar = new Rollbar({
 const app = express();
 
 app.use(express.json())
+app.use('/style', expreess.static('./public/styles.css'))
 
 app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'))
